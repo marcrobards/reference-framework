@@ -33,5 +33,7 @@
         public bool IsActive { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public virtual LuGearType LuGearType { get; set; }
     }
 }

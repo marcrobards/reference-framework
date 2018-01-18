@@ -44,5 +44,11 @@
 
         [Required]
         public bool IsDeleted { get; set; }
+
+        public virtual User User { get; set; }
+
+        public virtual LuWorkoutType LuWorkoutType { get; set; }
+
+        public virtual Gear Gear { get; set; }
     }
 }

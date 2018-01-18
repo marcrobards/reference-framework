@@ -21,5 +21,7 @@
 
         [Required]
         public bool IsActive { get; set; }
+
+        public virtual LuSport LuSport { get; set; }
     }
 }

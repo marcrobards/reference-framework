@@ -30,5 +30,7 @@
 
         [Required]
         public bool IsActive { get; set; }
+
+        public virtual LuGender LuGender { get; set; }
     }
 }

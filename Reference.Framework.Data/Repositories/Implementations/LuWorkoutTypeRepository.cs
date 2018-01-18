@@ -9,8 +9,4 @@
         {
         }
     }
-
-    public interface ILuWorkoutTypeRepository : IRepository<LuWorkoutType>
-    {
-    }
 }

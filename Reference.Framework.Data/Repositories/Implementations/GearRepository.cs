@@ -10,7 +10,5 @@
         }
     }
 
-    public interface IGearRepository : IRepository<Gear>
-    {
-    }
+
 }

@@ -62,13 +62,20 @@
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\GearRepository.cs" />
-    <Compile Include="Repositories\LuGearTypeRepository.cs" />
-    <Compile Include="Repositories\LuGenderRepository.cs" />
-    <Compile Include="Repositories\LuSportRepository.cs" />
-    <Compile Include="Repositories\LuWorkoutTypeRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Repositories\WorkoutRepository.cs" />
+    <Compile Include="Repositories\Implementations\GearRepository.cs" />
+    <Compile Include="Repositories\Implementations\LuGearTypeRepository.cs" />
+    <Compile Include="Repositories\Implementations\LuGenderRepository.cs" />
+    <Compile Include="Repositories\Implementations\LuSportRepository.cs" />
+    <Compile Include="Repositories\Implementations\LuWorkoutTypeRepository.cs" />
+    <Compile Include="Repositories\Implementations\UserRepository.cs" />
+    <Compile Include="Repositories\Implementations\WorkoutRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IGearRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILuGearTypeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILuGenderRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILuSportRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILuWorkoutTypeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IWorkoutRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reference.Framework.Model\Reference.Framework.Model.csproj">

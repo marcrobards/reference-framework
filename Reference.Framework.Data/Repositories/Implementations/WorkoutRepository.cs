@@ -9,8 +9,4 @@
         {
         }
     }
-
-    public interface IWorkoutRepository : IRepository<Workout>
-    {
-    }
 }

@@ -9,8 +9,4 @@
         {
         }
     }
-
-    public interface ILuSportRepository : IRepository<LuSport>
-    {
-    }
 }

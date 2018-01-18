@@ -9,8 +9,4 @@
         {
         }
     }
-
-    public interface ILuGearTypeRepository : IRepository<LuGearType>
-    {
-    }
 }

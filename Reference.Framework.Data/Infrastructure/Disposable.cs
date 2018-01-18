@@ -1,0 +1,36 @@
+﻿namespace Reference.Framework.Data.Infrastructure
+{
+    using System;
+
+    public class Disposable : IDisposable
+    {
+        private bool isDisposed;
+
+        ~Disposable()
+        {
+            Dispose(false);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (!isDisposed && disposing)
+            {
+                DisposeCore();
+            }
+
+            isDisposed = true;
+        }
+
+        // Override this to disposed custom objects
+        protected virtual void DisposeCore()
+        {
+
+        }
+    }
+}

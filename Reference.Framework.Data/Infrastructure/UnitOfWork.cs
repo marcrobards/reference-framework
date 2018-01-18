@@ -3,10 +3,8 @@
     using System.Data.Entity;
 
     public class UnitOfWork : IUnitOfWork
-    {
+    {       
         private readonly IDbFactory dbFactory;
-
-        public DbContextTransaction Transaction { get; private set; }
 
         private ExerciseEntities dbContext;
 
@@ -15,14 +13,16 @@
             this.dbFactory = dbFactory;
         }
 
+        public DbContextTransaction Transaction { get; private set; }
+
         public ExerciseEntities DbContext
         {
-            get { return dbContext ?? (dbContext = dbFactory.Init()); }
+            get { return this.dbContext ?? (this.dbContext = this.dbFactory.Init()); }
         }
 
         public void BeginTransaction()
         {
-            this.Transaction = DbContext.Database.BeginTransaction();
+            this.Transaction = this.DbContext.Database.BeginTransaction();
         }
 
         public void SaveChanges()

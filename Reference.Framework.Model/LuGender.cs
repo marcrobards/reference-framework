@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Reference.Framework.Model
+﻿namespace Reference.Framework.Model
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
-
+    
     [Table("LuGender")]
     public partial class LuGender
     {
@@ -25,6 +18,5 @@ namespace Reference.Framework.Model
         public string Description { get; set; }
 
         public bool IsActive { get; set; }
-
     }
 }

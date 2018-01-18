@@ -8,29 +8,28 @@
 
         ~Disposable()
         {
-            Dispose(false);
+            this.Dispose(false);
         }
 
         public void Dispose()
         {
-            Dispose(true);
+            this.Dispose(true);
             GC.SuppressFinalize(this);
-        }
-
-        private void Dispose(bool disposing)
-        {
-            if (!isDisposed && disposing)
-            {
-                DisposeCore();
-            }
-
-            isDisposed = true;
         }
 
         // Override this to disposed custom objects
         protected virtual void DisposeCore()
         {
+        }
 
+        private void Dispose(bool disposing)
+        {
+            if (!this.isDisposed && disposing)
+            {
+                this.DisposeCore();
+            }
+
+            this.isDisposed = true;
         }
     }
 }

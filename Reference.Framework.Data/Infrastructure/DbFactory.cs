@@ -2,18 +2,18 @@
 {
     public class DbFactory : Disposable, IDbFactory
     {
-        ExerciseEntities dbContext;
+        private ExerciseEntities dbContext;
 
         public ExerciseEntities Init()
         {
-            return dbContext ?? (dbContext = new ExerciseEntities());            
+            return this.dbContext ?? (this.dbContext = new ExerciseEntities());            
         }
 
         protected override void DisposeCore()
         {
-            if (dbContext != null)
+            if (this.dbContext != null)
             {
-                dbContext.Dispose();
+                this.dbContext.Dispose();
             }
         }
     }

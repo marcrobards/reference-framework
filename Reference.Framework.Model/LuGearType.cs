@@ -10,7 +10,7 @@
         [Key]
         public int GearTypeId { get; set; }
 
-        [Required]        
+        [Required]
         public int SportId { get; set; }
 
         [Required]
@@ -22,5 +22,7 @@
 
         [Required]
         public bool IsActive { get; set; }
+
+        public virtual LuSport LuSport { get; set; }
     }
 }

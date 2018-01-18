@@ -1,5 +1,5 @@
 ﻿namespace Reference.Framework.Data
-{    
+{
     using System.Data.Entity;
     using Reference.Framework.Model;
 

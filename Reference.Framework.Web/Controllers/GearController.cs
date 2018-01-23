@@ -1,6 +1,9 @@
 ﻿namespace Reference.Framework.Web.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Web.Mvc;
+    using Reference.Framework.Model;
     using Reference.Framework.Service;
     using Reference.Framework.Web.ViewModels;
 
@@ -26,9 +29,9 @@
             {
                 GearId = 1,
                 Name = "Hoka Bondi 4 #4",
-                GearType = "Running Shoes",
                 Manufacturer = "Hoka One One",
-                Model = "Bondi 4",
+                GearModel = "Bondi 4",
+                GearTypeId = 2,
                 Size = "9",
                 Description = "My current pair of Hoka One One Bondi 4's. This is my 4th pair of these shoes",
                 DatePurchased = new System.DateTime(2017, 1, 10),
@@ -36,7 +39,33 @@
                 IsActive = true,
             };
 
+            var gearTypes = this.gearService.GetGearTypes();
+
+            model.GearTypes = this.GetGearTypes(gearTypes);
+
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(GearViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // TODO: save to database
+            }
+
+            return View(model);
+        }
+
+        private IEnumerable<SelectListItem> GetGearTypes(IEnumerable<LuGearType> gearTypes)
+        {
+            var types = gearTypes.Select(x => new SelectListItem
+            {
+                Value = x.GearTypeId.ToString(),
+                Text = x.Name,
+            });
+
+            return new SelectList(types, "Value", "Text");
         }
     }
 }

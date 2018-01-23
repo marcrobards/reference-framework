@@ -20,6 +20,8 @@
 
         public IEnumerable<SelectListItem> GearTypes { get; set; }
 
+        public string GearType { get; set; }
+
         public string Manufacturer { get; set; }
 
         [Display(Name = "Model")]

@@ -2,6 +2,7 @@
 
 namespace Reference.Framework.Web
 {
+    using Reference.Framework.Web.Mappings;
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Http;
     using System.Web.Mvc;
@@ -19,6 +20,8 @@ namespace Reference.Framework.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             AutofacConfig.ConfigureContainer();
+
+            AutoMapperConfiguration.Configure();
         }
     }
 }

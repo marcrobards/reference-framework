@@ -26,8 +26,11 @@
         [StringLength(50)]
         public string Size { get; set; }
 
+        [StringLength(1000)]
+        public string Description { get; set; }
+
         public DateTime? DatePurchased { get; set; }
-        
+
         public decimal? CurrentMileage { get; set; }
 
         public bool IsActive { get; set; }

@@ -37,7 +37,7 @@
         public DateTime DatePurchased { get; set; }
 
         [Display(Name = "Current Mileage")]
-        [DisplayFormat(DataFormatString = "{0:n1}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = true)]
         public decimal CurrentMileage { get; set; }
 
         public bool IsActive { get; set; }

@@ -23,7 +23,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">@gear.Manufacturer @gear.GearModel</li>
                         <li class="list-group-item">Size @gear.Size</li>
-                        <li class="list-group-item">@Html.DisplayFor(model => gear.CurrentMileage) Miles</li>
+                        <li class="list-group-item">@String.Format("{0:N1}", @gear.CurrentMileage) Miles</li>
                         <li class="list-group-item">Started @gear.DatePurchased.ToString("MMMM d, yyyy")</li>
                     </ul>
                     <a href="/Gear/Edit/@gear.GearId" class="card-link">Edit</a>

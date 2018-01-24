@@ -49,6 +49,7 @@
     <Compile Include="LuWorkoutType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LuSport.cs" />
+    <Compile Include="UserRole.cs" />
     <Compile Include="Sport.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Workout.cs" />

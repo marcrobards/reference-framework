@@ -3,7 +3,7 @@
     using System.Data.Entity;
 
     public class UnitOfWork : IUnitOfWork
-    {       
+    {
         private readonly IDbFactory dbFactory;
 
         private ExerciseEntities dbContext;
@@ -32,7 +32,7 @@
 
         public void Commit()
         {
-            this.Transaction.Commit();            
+            this.Transaction.Commit();
         }
 
         public void Rollback()

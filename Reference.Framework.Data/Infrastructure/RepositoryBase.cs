@@ -27,7 +27,7 @@
         protected ExerciseEntities DbContext
         {
             get { return this.dataContext ?? (this.dataContext = this.DbFactory.Init()); }
-        }        
+        }
 
         public virtual void Add(T entity)
         {

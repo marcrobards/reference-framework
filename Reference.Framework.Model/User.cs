@@ -23,6 +23,14 @@
         public string Email { get; set; }
 
         [Required]
+        [StringLength(500)]
+        public string PasswordHash { get; set; }
+
+        [Required]
+        [StringLength(500)]
+        public string Salt { get; set; }
+
+        [Required]
         public int GenderId { get; set; }
 
         [Required]

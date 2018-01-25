@@ -47,7 +47,7 @@
 
         public User GetUserByEmail(string email)
         {
-            return this.userRepository.Get(x => x.Email == email);
+            return this.userRepository.Get(x => x.Email == email && x.IsDeleted == false);
         }
     }
 }

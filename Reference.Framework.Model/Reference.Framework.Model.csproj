@@ -46,12 +46,16 @@
     <Compile Include="Gender.cs" />
     <Compile Include="LuGender.cs" />
     <Compile Include="LuGearType.cs" />
+    <Compile Include="LuPerceivedExertion.cs" />
+    <Compile Include="LuRole.cs" />
     <Compile Include="LuWorkoutType.cs" />
+    <Compile Include="PerceivedExertion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LuSport.cs" />
-    <Compile Include="UserRole.cs" />
+    <Compile Include="Role.cs" />
     <Compile Include="Sport.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserRole.cs" />
     <Compile Include="Workout.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

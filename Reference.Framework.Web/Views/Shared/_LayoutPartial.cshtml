@@ -1,0 +1,16 @@
+﻿@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOut", "Auth", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="nav-item dropdown">
+            <a class="navbar-text dropdown-toggle" href="#" id="navbarLogoutLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @User.Identity.Name
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarLogoutLink">
+                <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+            </div>
+        </div>
+    }
+}

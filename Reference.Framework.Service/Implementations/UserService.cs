@@ -16,10 +16,9 @@
             this.unitOfWork = unitOfWork;
         }
 
-        public string GetUserRole(User user)
+        public Role GetUserRole(User user)
         {
-            // TODO: get this from DB
-            return UserRole.Admin.ToString();
+            return this.userRepository.GetUserRole(user.UserId);
         }
 
         public void RegisterUser(User user)

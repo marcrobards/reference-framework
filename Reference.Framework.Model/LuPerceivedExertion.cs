@@ -3,14 +3,14 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("LuGender")]
-    public partial class LuGender
+    [Table("LuPerceivedExertion")]
+    public class LuPerceivedExertion
     {
         [Key]
-        public int GenderId { get; set; }
+        public int PerceivedExertionId { get; set; }
 
         [Required]
-        [StringLength(1)]
+        [StringLength(50)]
         public string Name { get; set; }
 
         [Required]

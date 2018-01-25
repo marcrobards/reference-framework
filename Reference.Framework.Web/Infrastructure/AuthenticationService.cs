@@ -45,27 +45,15 @@
             return new AuthenticationResult();
         }
 
-        public void RegisterUser()
+        public void RegisterUser(User user, string password)
         {
             var rng = new RNGCryptoServiceProvider();
 
-            var user = new User();
+            var salt = GenerateRandomSalt(rng, 100);
+            var passwordHash = this.Hash($"{password}{salt}");
 
-            //var password = "password";
-            //var salt = GenerateRandomSalt(rng, 100);
-            //var passwordHash = this.Hash($"{password}{salt}");
-
-            //var user = new User
-            //{
-            //    Email = "marc@robards.org",
-            //    FirstName = "Marc",
-            //    LastName = "Robards",
-            //    GenderId = (int)Gender.Male,
-            //    DOB = new DateTime(1971, 9, 2),
-            //    Salt = salt,
-            //    PasswordHash = passwordHash,
-            //    IsActive = true
-            //};
+            user.Salt = salt;
+            user.PasswordHash = passwordHash;
 
             this.userService.RegisterUser(user);
         }
@@ -87,18 +75,23 @@
         private string GenerateRandomSalt(RNGCryptoServiceProvider rng, int size)
         {
             var bytes = new byte[size];
+
             rng.GetBytes(bytes);
+
             return Convert.ToBase64String(bytes);
         }
 
         private string Hash(string password)
         {
             var bytes = new UTF8Encoding().GetBytes(password);
+
             byte[] hashBytes;
+
             using (var algorithm = new SHA512Managed())
             {
                 hashBytes = algorithm.ComputeHash(bytes);
             }
+
             return Convert.ToBase64String(hashBytes);
         }
     }

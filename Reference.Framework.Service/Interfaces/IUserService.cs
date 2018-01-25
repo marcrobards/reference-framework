@@ -4,7 +4,7 @@
 
     public interface IUserService
     {
-        string GetUserRole(User user);
+        Role GetUserRole(User user);
 
         void RegisterUser(User user);
 

@@ -5,5 +5,6 @@
 
     public interface IUserRepository : IRepository<User>
     {
+        Role GetUserRole(int userId);
     }
 }

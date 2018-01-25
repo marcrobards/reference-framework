@@ -3,19 +3,15 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("LuGender")]
-    public partial class LuGender
+    [Table("LuRole")]
+    public class LuRole
     {
         [Key]
-        public int GenderId { get; set; }
-
-        [Required]
-        [StringLength(1)]
-        public string Name { get; set; }
+        public int RoleId { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Description { get; set; }
+        public string Name { get; set; }
 
         public bool IsActive { get; set; }
     }

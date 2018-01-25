@@ -1,6 +1,7 @@
 ﻿namespace Reference.Framework.Model
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -37,8 +38,10 @@
         public DateTime DOB { get; set; }
 
         [Required]
-        public bool IsActive { get; set; }
+        public bool IsDeleted { get; set; }
 
         public virtual LuGender LuGender { get; set; }
+
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

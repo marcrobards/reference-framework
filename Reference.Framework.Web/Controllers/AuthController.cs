@@ -59,15 +59,18 @@
             return RedirectToAction(nameof(System.Web.UI.WebControls.Login));
         }
 
-        public ActionResult Register()
-        {
-            var authenticationManager = HttpContext.GetOwinContext().Authentication;
-            var authenticationService = new AuthenticationService(authenticationManager, this.userService);
+        /*
+        //TODO: Implement Registration
+        //public ActionResult Register()
+        //{
+        //    var authenticationManager = HttpContext.GetOwinContext().Authentication;
+        //    var authenticationService = new AuthenticationService(authenticationManager, this.userService);
 
-            authenticationService.RegisterUser();
+        //    authenticationService.RegisterUser();
 
-            return RedirectToAction(nameof(LogIn));
-        }
+        //    return RedirectToAction(nameof(LogIn));
+        //}
+        */
 
         private string GetRedirectUrl(string returnUrl)
         {

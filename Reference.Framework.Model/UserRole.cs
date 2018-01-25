@@ -1,8 +1,22 @@
 ﻿namespace Reference.Framework.Model
 {
-    public enum UserRole
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("UserRole")]
+    public class UserRole
     {
-        Athlete = 1,
-        Admin = 2,
+        [Key]
+        public int UserRoleId { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+
+        [Required]
+        public int RoleId { get; set; }
+
+        public virtual User User { get; set; }
+
+        public virtual LuRole LuRole { get; set; }
     }
 }

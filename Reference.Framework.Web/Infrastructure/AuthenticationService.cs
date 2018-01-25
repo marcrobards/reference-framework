@@ -49,21 +49,23 @@
         {
             var rng = new RNGCryptoServiceProvider();
 
-            var password = "b6#2>66e&DMasp#@";
-            var salt = GenerateRandomSalt(rng, 100);
-            var passwordHash = this.Hash($"{password}{salt}");
+            var user = new User();
 
-            var user = new User
-            {
-                Email = "marc@robards.org",
-                FirstName = "Marc",
-                LastName = "Robards",
-                GenderId = (int)Gender.Male,
-                DOB = new DateTime(1971, 9, 2),
-                Salt = salt,
-                PasswordHash = passwordHash,
-                IsActive = true
-            };
+            //var password = "password";
+            //var salt = GenerateRandomSalt(rng, 100);
+            //var passwordHash = this.Hash($"{password}{salt}");
+
+            //var user = new User
+            //{
+            //    Email = "marc@robards.org",
+            //    FirstName = "Marc",
+            //    LastName = "Robards",
+            //    GenderId = (int)Gender.Male,
+            //    DOB = new DateTime(1971, 9, 2),
+            //    Salt = salt,
+            //    PasswordHash = passwordHash,
+            //    IsActive = true
+            //};
 
             this.userService.RegisterUser(user);
         }

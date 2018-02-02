@@ -1,12 +1,11 @@
 ﻿namespace Reference.Framework.Web
 {
-    using System.Reflection;
-    using System.Web.Mvc;
     using Autofac;
     using Autofac.Integration.Mvc;
     using Reference.Framework.Data.Infrastructure;
-    using Reference.Framework.Data.Repositories;
-    using Reference.Framework.Service;
+    using System;
+    using System.Reflection;
+    using System.Web.Mvc;
 
     public class AutofacConfig
     {
@@ -19,13 +18,13 @@
 
             // Repositories
             // Need to add an entry here for every repository created
-            builder.RegisterAssemblyTypes(typeof(GearRepository).Assembly)
+            builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces().InstancePerRequest();
 
             // Services
             // Need to add an entry here for every service created
-            builder.RegisterAssemblyTypes(typeof(GearService).Assembly)
+            builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
                 .Where(t => t.Name.EndsWith("Service"))
                 .AsImplementedInterfaces().InstancePerRequest();
 
